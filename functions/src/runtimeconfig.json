@@ -1,0 +1,5 @@
+{
+  "mongodb": {
+    "uri": "mongodb+srv://admin:redbull@cluster0.hqbvu9r.mongodb.net/vibe_link?retryWrites=true&w=majority"
+  }
+}
