@@ -6,4 +6,5 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/", playlistRouter);
+
 export const api = functions.https.onRequest(app);
