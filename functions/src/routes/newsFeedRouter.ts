@@ -21,6 +21,17 @@ newsFeedRouter.get("/newsfeed", async (req, res) => {
     errorResponse(err, res);
   }
 });
+newsFeedRouter.get("/newsfeed/:id", async (req, res) => {
+  const id: string = req.params.id;
+  try {
+    const client = await getClient();
+    const cursor = client.db().collection<Post>("newsfeed").find({ from: id });
+    const results = await cursor.toArray();
+    res.json(results);
+  } catch (err) {
+    errorResponse(err, res);
+  }
+});
 
 newsFeedRouter.post("/newsfeed", async (req, res) => {
   const newPost: Post = req.body;
